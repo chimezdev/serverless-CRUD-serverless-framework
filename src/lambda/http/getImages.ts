@@ -11,6 +11,7 @@ export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEven
 
   console.log('Caller event', event)
   const groupId = event.pathParameters.groupId
+
   const validGroupId = await groupExists(groupId)
 
   if (!validGroupId) {
@@ -28,7 +29,7 @@ export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEven
   const images = await getImagesPerGroup(groupId)
 
   return {
-    statusCode: 201,
+    statusCode: 200,
     headers: {
       'Access-Control-Allow-Origin': '*'
     },
@@ -47,10 +48,10 @@ async function groupExists(groupId: string) {
       }
     })
     .promise()
-
+    // if the result item is defined, the group with the id exist else
   console.log('Get group: ', result)
-  return !!result.Item
-}
+  return !!result.Item  //the '!!' symbols convert the result if undefined into booleon
+}    //the first '!' converts undefined to 'true' while d 2nd '!' converts it to false
 
 async function getImagesPerGroup(groupId: string) {
   const result = await docClient.query({
@@ -59,7 +60,7 @@ async function getImagesPerGroup(groupId: string) {
     ExpressionAttributeValues: {
       ':groupId': groupId
     },
-    ScanIndexForward: false
+    ScanIndexForward: false //this reverses the sort order(returns the latest img 1st)
   }).promise()
 
   return result.Items

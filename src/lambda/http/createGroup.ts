@@ -22,7 +22,7 @@ export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEven
     Item: newItem
   }).promise()
 
-  return {
+  const response = {
     statusCode: 201,
     headers: {
       'Access-Control-Allow-Origin': '*'
@@ -31,4 +31,5 @@ export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEven
       newItem
     })
   }
+  return response
 }

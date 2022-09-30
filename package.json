@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "source-map-support": "^0.5.11",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
@@ -15,12 +17,12 @@
     "@types/node": "^10.14.4",
     "aws-sdk": "^2.1225.0",
     "serverless-aws-documentation": "^1.1.0",
-    "serverless-reqvalidator-plugin": "^1.0.3",
-    "serverless-webpack": "^5.2.0",
-    "ts-loader": "^5.3.3",
-    "typescript": "^4.8.2",
-    "webpack": "^4.29.6"
+    "serverless-reqvalidator-plugin": "^1.0.4",
+    "serverless-webpack": "^5.10.0",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.8.4",
+    "webpack": "^5.74.0"
   },
-  "author": "stonecloud",
+  "author": "Ivan Mushketyk",
   "license": "MIT"
 }
