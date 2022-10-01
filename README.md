@@ -23,6 +23,11 @@ copy the api endpoint displayed on the terninal to postman and test
 # Time to configure our severless configuration file
 - In the serverless.ts
 
+#SERVERLESS LESSON 3
+- In lesson2 error, delete package-lock.json and node_module.
+- Install typescript version 4.x.x
+- Run `npm install`
+- In the tsconfig file add: "useUnknownInCatchVariables": false, save and rerun `npm i`
 
 # Incase you get the following errors when you run `sls deploy`
 # ERROR
@@ -30,8 +35,8 @@ copy the api endpoint displayed on the terninal to postman and test
 - Debug Failure. False expression: Non-string value passed to `ts.resolveTypeReferenceDirective`, likely by a wrapping package working with an outdated `resolveTypeReferenceDirectives` signature. This is probably not a problem in TS itself.
 
 #SOLUTION
-npm install typescript@latest ts-node@latest
-# install this webpack version: webpack": "^5.74.0" or any other version but
-# search for 'ts-loader' for the version of webpack that you installed in my case it was: "ts-loader": "^9.4.1"
-The rerun 'npm install'
-then run 'sls deploy'
+- npm install typescript@latest ts-node@latest
+- install this webpack version: webpack": "^5.74.0" or any other version but
+- search for 'ts-loader' for the version of webpack that you installed in my case it was: "ts-loader": "^9.4.1"
+- Then rerun 'npm install'
+- then run 'sls deploy'
